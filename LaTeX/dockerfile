@@ -1,0 +1,22 @@
+FROM mcr.microsoft.com/devcontainers/base:bullseye
+
+RUN apt-get update && apt-get install -y --no-install-recommends wget unzip gzip \
+    # --- Download VSIX file from Marketplace ---
+    && wget -q "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/James-Yu/vsextensions/latex-workshop/latest/vspackage" \
+         -O /tmp/latex-workshop.vsix \
+    # --- Decompress: rename → gunzip → unzip ---
+    && mv /tmp/latex-workshop.vsix /tmp/latex-workshop.gz \
+    && gzip --decompress /tmp/latex-workshop.gz \
+    && mkdir /tmp/latex-workshop-unzipped \
+    && unzip /tmp/latex-workshop -d /tmp/latex-workshop-unzipped \
+    # Read version from package.json
+    && VERSION=$(jq -r '.version' /tmp/latex-workshop-unzipped/extension/package.json) \
+    # --- Move real extension folder into VS Code's extensions dir ---
+    && mkdir -p /root/.vscode-server/extensions \
+    && mv /tmp/latex-workshop-unzipped/extension /root/.vscode-server/extensions/james-yu.latex-workshop-$VERSION \
+    # --- Cleanup ---
+    && rm -rf /tmp/latex-workshop \
+    && rm -rf /tmp/latex-workshop-unzipped \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN chown -R vscode:vscode /root/.vscode-server
