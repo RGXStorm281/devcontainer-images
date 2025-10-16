@@ -1,1 +1,1 @@
-docker build -t latex-base .
+devcontainer build --workspace-folder . --image-name latex-base:latest
