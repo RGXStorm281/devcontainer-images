@@ -6,7 +6,20 @@
 
 	"customizations": {
 		"vscode": {
-			"extensions": ["James-Yu.latex-workshop"]
+			"extensions": ["James-Yu.latex-workshop"],
+			"settings": {
+				// General settings
+				"files.eol": "\n",
+				"editor.wordWrap": "on",
+				"editor.formatOnSave": true,
+				"files.associations": {
+					"*.tex": "latex"
+				},
+				// Latex settings
+				"latex-workshop.latex.autoBuild.run": "onSave",
+				"latex-workshop.view.pdf.internal.synctex.keybinding": "ctrl-click",
+				"latex-workshop.synctex.afterBuild.enabled": true
+			}
 		}
 	}
 }
