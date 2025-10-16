@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Install KOMA-Script package.
+# exit immediately if a command exits with non-zero status
+set -e
+
+# Install latex environment.
 sudo apt-get update
 sudo apt-get install -y \
     make \
