@@ -12,6 +12,7 @@
 				"files.eol": "\n",
 				"editor.wordWrap": "on",
 				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "James-Yu.latex-workshop",
 				"files.associations": {
 					"*.tex": "latex"
 				},

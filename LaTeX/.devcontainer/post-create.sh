@@ -17,6 +17,7 @@ sudo apt-get install -y \
     texlive-lang-european \
     texlive-lang-german \
     texlive-bibtex-extra \
+    texlive-extra-utils \
     biber \
     ghostscript \
     cm-super \
