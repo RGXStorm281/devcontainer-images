@@ -30,3 +30,9 @@ Once you have all of that installed, checkout the git repository, open the folde
 cd latex-base
 ./build.sh
 ```
+
+For the script to work you will need the DevContainer CLI. On MacOS you can install that via Homebrew using
+
+```
+brew install devcontainer
+```
