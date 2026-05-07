@@ -25,7 +25,10 @@
 		}
 	},
 
-	"postCreateCommand": "rustup component add rustfmt clippy",
+	"postCreateCommand": {
+		"add_formatter": "rustup component add rustfmt clippy",
+		"fix_cargo_ownership": "sudo chown -R $(whoami) /usr/local/cargo"
+	},
 
 	"remoteUser": "vscode"
 }

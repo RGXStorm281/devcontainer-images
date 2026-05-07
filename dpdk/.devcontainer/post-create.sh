@@ -36,5 +36,10 @@ meson compile
 meson install
 ldconfig
 
-# install cbindgen for rust
-cargo install cbindgen
+# install FFI gen tools for rust 
+# and their dependencies
+apt install -y \
+    clang \
+    libclang-dev \
+    llvm-dev
+cargo install cbindgen bindgen-cli
