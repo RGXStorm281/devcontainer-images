@@ -1,5 +1,5 @@
 # use the microsoft devcontainer image as base
-FROM mcr.microsoft.com/devcontainers/base:trixie
+FROM mcr.microsoft.com/devcontainers/rust:latest
 
 # Copy your script into the image
 COPY post-create.sh /usr/local/bin/post-create.sh

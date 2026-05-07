@@ -35,3 +35,6 @@ meson compile
 # install DPDK
 meson install
 ldconfig
+
+# install cbindgen for rust
+cargo install cbindgen
