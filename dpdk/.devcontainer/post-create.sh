@@ -43,3 +43,9 @@ apt install -y \
     libclang-dev \
     llvm-dev
 cargo install cbindgen bindgen-cli
+
+# install yang dependencies
+apt install -y \
+    libyang3 \
+    libyang3-tools \
+    libyang-dev
